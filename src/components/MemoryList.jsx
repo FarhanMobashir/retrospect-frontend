@@ -74,7 +74,7 @@ const MemoryList = () => {
                 Create New
             </Link>
             {memories && memories.map(memory => (
-                <div key={memory.id} style={{ marginBottom: '20px', padding: '10px', border: '1px solid #ddd', borderRadius: '5px' }}>
+                <div key={memory.ID} style={{ marginBottom: '20px', padding: '10px', border: '1px solid #ddd', borderRadius: '5px' }}>
                     <h2 style={{ margin: '0 0 10px 0' }}>{memory.Title}</h2>
                     <ReactQuill
                         value={memory.Body}
