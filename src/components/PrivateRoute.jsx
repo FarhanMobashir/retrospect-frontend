@@ -5,7 +5,6 @@ import AppLayout from './AppLayout';
 
 const PrivateRoute = ({ element: Element, ...rest }) => {
     const { authState } = useContext(AuthContext);
-    console.log(authState)
     return authState.token ? <AppLayout><Element {...rest} /></AppLayout> : <Navigate to="/login" />;
 };
 
