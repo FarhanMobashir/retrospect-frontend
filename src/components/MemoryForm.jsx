@@ -3,6 +3,7 @@ import { AuthContext } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
+import { toast } from 'react-toastify';
 
 const MemoryForm = ({ memory, onSubmit }) => {
     const [title, setTitle] = useState(memory ? memory.title : '');
@@ -37,8 +38,7 @@ const MemoryForm = ({ memory, onSubmit }) => {
             // After successful submission, clear the form
             setTitle('');
             setBody('');
-            // Invoke the onSubmit callback to handle any additional logic in the parent component
-            onSubmit(formData);
+            toast.success('Memory saved successfully');
             // Navigate to /memories
             navigate('/memories');
         } catch (error) {

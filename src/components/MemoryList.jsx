@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
+import { toast } from 'react-toastify';
 
 const MemoryList = () => {
     const [memories, setMemories] = useState([]);
@@ -45,6 +46,7 @@ const MemoryList = () => {
             });
             if (response.ok) {
                 setMemories(memories.filter(memory => memory.ID !== id));
+                toast.success("Memory Deleted Successfully")
             } else {
                 const data = await response.json();
                 console.error('Error deleting memory:', data.error);

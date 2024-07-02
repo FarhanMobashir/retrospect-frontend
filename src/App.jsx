@@ -9,10 +9,14 @@ import MemoryForm from './components/MemoryForm';
 import Homepage from './components/Homepage';
 import PrivateRoute from './components/PrivateRoute';
 import Profile from './components/Profile';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const App = () => {
   return (
     <Router>
+      <ToastContainer />
       <AuthProvider>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <Routes>
